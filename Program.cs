@@ -14,11 +14,16 @@ namespace CalculateMaxThread
                 {
                     new Thread(() => Thread.Sleep(Timeout.Infinite)).Start();
                     threadCount ++;
+                    if ( i % 10 == 0)
+                    {
+                        Console.WriteLine(threadCount);        
+                    }
+                    
                 }
             }
             catch
             {
-                Console.WriteLine(threadCount);
+                
                 Console.ReadKey(true);
             }
         }
